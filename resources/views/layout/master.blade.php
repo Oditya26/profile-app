@@ -59,7 +59,6 @@
   
   @endif
 @yield('container')
-
 @livewireScripts
 </body>
 </html>
