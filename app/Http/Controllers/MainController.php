@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use DB;
-
 use Illuminate\Http\Request;
 use App\Models\Profile as prt;
+use Illuminate\Support\Facades\DB as Database;
 
 class MainController extends Controller
 {
@@ -20,7 +19,7 @@ class MainController extends Controller
     }
 
     public function HomePage(){
-        $data = DB::table('profiles')->get();
+        $data = Database::connection('mysql')->table('profiles')->get();
         return view('home')->with('data',$data);
     }
 }

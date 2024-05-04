@@ -7,5 +7,6 @@
     <p>
         This is form page
     </p>
+    @livewire('search-users')
 </div>
 @stop

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash as Hashing;
 
 class LoginController extends Controller
 {
@@ -28,7 +30,7 @@ class LoginController extends Controller
         $user = new \App\Models\User;
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = \Hash::make($request->password);
+        $user->password = Hashing::make($request->password);
         $user->save();
 
         return redirect('login');
